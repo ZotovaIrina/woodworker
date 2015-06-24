@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="woodworks"> <!-- Добавляем атрибут ng-app, который инициализирует запуск AngularJS -->
+<head>
+    <title> Woodworks </title>
+
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/fotorama.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/room.css">
+    <link rel="stylesheet" type="text/css" href="css/about-me.css">
+    <link rel="stylesheet" type="text/css" href="css/media-queries.css">
+
+    <script src="js/lib/jquery-2.1.4.min.js"></script>
+    <script src="js/lib/fotorama.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+    <header id="header">
+        <div id="site-logo">
+            <a href="#/" class="main-link"></a>
+
+            <h1>Валерий Злобин</h1>
+
+            <h2>Мебель из массива</h2>
+
+        </div>
+
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#/" class="main-nav-link">Главная</a></li>
+                <li><a href="#/about-me" class="main-nav-link">Обо мне</a></li>  <!-- после #/ обрабатывается маршрутизатором ангуляра about-me является меткой и будет отображаться в адрессной строке -->
+                <li><a href="Contact.html" class="main-nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content" ng-view> <!-- атрибут ng задается для той части, которая будет определяться ангуляром -->
+    </div>
+</div>
+
+<footer id="footer">
+    <div class="footer-contact">
+        <h3>Мои контакты:</h3>
+        <a href="tel:+79123117862"> Тел.: 8-912-311-78-62 </a> <br>
+        <a href="mailto:zlobin1961@yandex.ru"> zlobin1961@yandex.ru </a>
+    </div>
+    <div class="footer-autor">Автор: Зотова Ирина</div>
+</footer>
+
+
+</body>
+</html>

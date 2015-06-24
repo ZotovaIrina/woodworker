@@ -1,0 +1,197 @@
+* {
+margin: 0; /*Для всех элементов по умолчанию устанавливаем марджин равным 0*/
+}
+
+footer, header, nav {
+    display: block; /*Делаем все элементы отдельными блоками*/
+}
+
+
+html, body {
+    height: 100%;
+}
+
+html {
+    font-family: 'Times new roman', monospace;
+    font-size: 15px;
+}
+
+body {
+    background: url("../image/bg-body.png");
+    margin: 0;
+    background-size: 100%;
+}
+.wrapper {
+    background-color: #FFF;
+    width: 940px;
+    margin: auto;
+    min-height: 100%;
+    margin-bottom: -138px; /* equal to footer height */
+}
+
+.wrapper:after {
+    content: "";
+    display: block;
+    height: 132px;
+}
+
+#header {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    background-color: #241b18;
+    height: 88px;
+    border-bottom: 1px solid #fff;
+    padding: 3em 0 0;
+    margin: 0;
+    text-indent: 1em; /* отступ первой буквы*/
+}
+
+#site-logo {
+    float: left;
+}
+
+#site-logo h1 {
+
+    color: #FFD119;
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase; /* Все буквы прописью*/
+
+}
+
+#site-logo h2 {
+    color: #FFFFFF;
+    margin: 0;
+    font-size: 1em;
+    letter-spacing: 2px; /* Расстояние между буквами*/
+
+}
+
+.main-link {
+    position: absolute;
+    display: block;
+    width: 400px;
+    height: 80px;
+}
+
+#main-nav li {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Убирает точки пунктов*/
+    float: left; /* Пункты следуют один за другим в строчку*/
+}
+
+#main-nav a {
+    line-height: 100%;
+    font-size: 1.33em;
+    font-weight: bold;
+    color: #FFFFFF;
+    display: block;
+    padding: 1em 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#main-nav li:hover .main-nav-link {
+    /*При наведении курсора на картинку*/
+    color: #FFD119; /*Уровень прозрачности элемента*/
+}
+
+#main-nav {
+    float: right;
+}
+
+.content {
+    width: 940px;
+    margin: 0 auto;
+    padding-top: 135px;
+}
+
+.content ul {
+    /*Блок ссылок*/
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    margin: 0 26px;
+}
+
+.section-item {
+    /*Один пункт списка*/
+    list-style: none; /* Стиль маркеров списка. Маркеры отсутствуют*/
+    display: inline-block;
+    width: 293px;
+    height: auto;
+    margin: 1px;
+}
+
+.section-item-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.section-item-image {
+    /*Свойства картинки ссылки*/
+    display: block;
+    width: 100%;
+}
+
+.section-item-link:hover .section-item-image {
+    /*При наведении курсора на картинку*/
+    opacity: 0.5; /*Уровень прозрачности элемента*/
+}
+
+.section-item-details {
+    background: #4b3a33;
+    padding: 17px;
+    border-left: 5px solid #FFD119;
+}
+
+.section-item-details p {
+    color: #FFFFFF;
+    font-size: 1em;
+}
+
+.section-item-title {
+    margin: 0;
+    color: #FFD119;
+    font-size: 2em;
+}
+
+.content-p {
+    display: block;
+    margin: 20px 26px;
+    padding: 20px 0 20px 10px;
+    width: 873px;
+    background: #4b3a33;
+    border-left: 5px solid #FFD119;
+    font-size: 1.2em;
+    color: #FFFFFF;
+}
+
+#footer {
+
+    width: 100%;
+    clear: both;
+    background: #FFD119;
+    margin: 0;
+    height: 136px;
+    border-top: 2px solid #fff;
+}
+
+.footer-autor {
+    margin: 1em 2em 0;
+    font-size: 1em;
+    float: right;
+}
+
+.footer-contact h3 {
+    font-size: 1.33em;
+}
+
+.footer-contact {
+    margin-left: 1em;
+    padding-top: 1em;
+    line-height: 1.2em;
+    font-size: 1em;
+    color: #241b18;
+}

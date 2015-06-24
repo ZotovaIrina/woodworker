@@ -1,0 +1,15 @@
+<ul>
+    <li class="section-item" ng-repeat="item in items">
+        <a ng-href="{{item.link}}" class="section-item-link">
+            <img ng-src="{{item.imgLink}}"
+                 alt="{{item.name}}"
+                 class="section-item-image"/>
+
+            <div class="section-item-details">
+                <div class="section-item-title">{{item.name}}</div>
+                <p>{{item.description}}</p>
+            </div>
+        </a>
+    </li>
+</ul>
+<div class="content-p"><p>Вся мебель делается на заказ по вашим размерам, из материала по вашему выбору и с покрытием, которое вы предпочитаете.</p></div>
