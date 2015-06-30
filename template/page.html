@@ -1,0 +1,16 @@
+<div class="page-content">
+
+    <div class="fotorama"
+         data-nav="thumbs"
+         data-allowfullscreen="true"
+         data-keyboard="true">
+        <a ng-repeat="image in contents.images" href="image/page/DSC_{{image}}!.jpg"> <!-- создание списка изображений происходит контроллером -->
+            <img src="image/page/mini/DSC_{{image}}mini.jpg">   <!-- В переменную image передаются по одной картинки из переменной contents.images -->
+        </a>
+
+    </div>
+
+    <div  class="page-content-text" ng-include="contents.description"> <!-- ng-include  считывает данные из файла, адрес которой находится в переменной и вставляет их на страницу -->
+
+    </div>
+</div>

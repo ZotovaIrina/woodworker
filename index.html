@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/lib/fotorama.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/room.css">
-    <link rel="stylesheet" type="text/css" href="css/about-me.css"/>
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+    <link rel="stylesheet" type="text/css" href="css/contact.css"/>
     <link rel="stylesheet" type="text/css" href="css/media-queries.css">
 
     <script src="js/lib/jquery-2.1.4.min.js"></script>
@@ -26,19 +26,19 @@
 <div class="wrapper">
     <header id="header">
         <div id="site-logo">
-            <a href="#/" class="main-link"></a>
+            <a href="#/" class="main-link">
 
             <h1>Валерий Злобин</h1>
 
             <h2>Мебель из массива</h2>
-
+            </a>
         </div>
 
         <nav id="main-nav">
             <ul>
                 <li><a href="#/" class="main-nav-link">Главная</a></li>
-                <li><a href="#/about-me" class="main-nav-link">О себе</a></li>  <!-- после #/ обрабатывается маршрутизатором ангуляра about-me является меткой и будет отображаться в адрессной строке -->
-                <li><a href="Contact.html" class="main-nav-link">Контакты</a></li>
+                <li><a href="#/about_me" class="main-nav-link">О себе</a></li>  <!-- после #/ обрабатывается маршрутизатором ангуляра about-me является меткой и будет отображаться в адрессной строке -->
+                <li><a href="#/contact" class="main-nav-link">Контакты</a></li>
             </ul>
         </nav>
     </header>
@@ -49,11 +49,12 @@
 
 <footer id="footer">
     <div class="footer-contact">
-        <h3>Мои контакты:</h3>
+        <a href="#/contact" class="footer-contact-link">Мои контакты:</a> <br>
         <a href="tel:+79123117862"> Тел.: 8-912-311-78-62 </a> <br>
-        <a href="mailto:zlobin1961@yandex.ru"> zlobin1961@yandex.ru </a>
+        <a href="mailto:zlobin1961@yandex.ru"> zlobin1961@yandex.ru </a> <br>
+        <a href="https://vk.com/valerizlobin"><img src="image/vk.png" class="footer-contact-picture" /></a> <br>
     </div>
-    <div class="footer-autor">Автор: Зотова Ирина</div>
+    <span class="footer-autor">Автор: Зотова Ирина</span>
 </footer>
 
 

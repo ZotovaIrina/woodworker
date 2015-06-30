@@ -4,75 +4,177 @@ var app = angular.module('woodworks', ['ngRoute']);
 app.controller('mainPage', function ($scope) {
     $scope.items = [            // $scope – специальный объект, который задает параметры отображения переменной.
         {
-            name: 'Комната',
-            description: 'Мебель для спальни, прихожей',
-            link: '#/room',
+            name: 'Дом',
+            description: 'Мебель для спальни, кухни, оффиса',
+            link: '#/page/room',
             imgLink: 'image/bed.jpg'
         },
         {
             name: 'Кресло-качалка',
             description: 'Описание кресел-качалок',
-            link: 'http://link.ru',
-            imgLink: 'image/dsc_8343.jpg'
+            link: '#/page/rocking_chair',
+            imgLink: 'https://pp.vk.me/c627530/v627530274/6d23/TqCltgHOjus.jpg'
         },
         {
             name: 'Садовая мебель',
             description: 'Мебель для сада, бани, беседки',
-            link: 'http://link.ru',
-            imgLink: 'image/dsc_8343.jpg'
+            link: '#/page/garden_furniture',
+            imgLink: 'https://pp.vk.me/c623629/v623629274/3f31c/SVgg4HgOmjY.jpg'
         },
         {
             name: 'Кухонная мебель',
             description: 'Мебель для кухни',
-            link: 'http://link.ru',
+            link: '#/page/kitchen',
             imgLink: 'image/table.jpg'
         },
         {
             name: 'Прочее',
             description: 'Прочие мелочи',
-            link: 'http://link.ru',
-            imgLink: 'image/other.jpg'
+            link: '#/page/other',
+            imgLink: 'https://pp.vk.me/c623629/v623629274/3ff08/QyFF_YKO88o.jpg'
         },
         {
-            name: 'Контакты',
-            description: 'Как со мной связаться',
-            link: 'http://link.ru',
+            name: 'Детская мебель',
+            description: 'Мебель для детей, игрушки',
+            link: '#/page/baby',
             imgLink: 'image/table.jpg'
         }
     ];
 
 });
 
-app.controller('room', function ($scope) {
-    $('.fotorama').fotorama({
-    });
+app.controller('page', function ($scope, $timeout, $routeParams) {
+    $timeout(function () {                            // Добавляем функцию timeoutБ которая откладывает выполнение фоторамы на 1 мс. Начинает выполняться функция scope и создает массив изображений
+        $('.fotorama').fotorama({});            // Фоторама же добавляется в очередь и дожидается завершения заполнения массива
+    }, 1);
+    var id = $routeParams.pageId; // присваиваем переменной id значение параметра URL pageId. PageId задано в ссылках на главной странице
+    var cont = {    // Объект содержащий данные для страниц. Список номеров картинок и адрес файла с текстом
+        room: {
+            images: [
+                '6383',
+                '6384',
+                '6385',
+                '6386',
+                '6387',
+                '6388',
+                '6389',
+                '6390',
+                '6391'
+            ],
+            description: 'template/room.html'
+        },
+        rocking_chair: {
+            images: [
+                '6383',
+                '6384',
+                '6385',
+                '6386',
+                '6387',
+                '6388',
+                '6389',
+                '6390',
+                '6391'
+            ],
+            description: 'template/rocking_chair.html'
+        },
+        garden_furniture: {
+            images: [
+                '9490',
+                '9491',
+                '9493',
+                '9494',
+                '9496',
+                '9497',
+                '9499'
+            ],
+            description: 'template/garden_furniture.html'
+        },
+        kitchen: {
+            images: [
+                '9490',
+                '9491',
+                '9493',
+                '9494',
+                '9496',
+                '9497',
+                '9499'
+            ],
+            description: 'template/kitchen.html'
+        },
+        other: {
+            images: [
+                '9490',
+                '9491',
+                '9493',
+                '9494',
+                '9496',
+                '9497',
+                '9499'
+            ],
+            description: 'template/other.html'
+        },
+        baby: {
+            images: [
+                '9490',
+                '9491',
+                '9493',
+                '9494',
+                '9496',
+                '9497',
+                '9499'
+            ],
+            description: 'template/baby.html'
+        }
+    };
+    $scope.contents = cont[id];     // contents принимает значение массива с картинками и текстом с нужным id
+})
+;
+
+app.controller('contact', function ($scope) {
+    $scope.items = [
+        {
+            name: 'phone',
+            link: 'tel:+79123117862',
+            img: 'image/telephone.png',
+            span: 'Тел.: 8-912-311-78-62'
+        },
+        {
+            name: 'e-male',
+            link: 'mailto:zlobin1961@yandex.ru',
+            img: 'image/e-mail.png',
+            span: 'zlobin1961@yandex.ru'
+        },
+        {
+            name: 'vkontakte',
+            link: 'https://vk.com/valerizlobin',
+            img: 'image/vk.png',
+            span: 'Мебель ручной работы на заказ'
+        }
+    ]
 });
 
+
 app.config(['$routeProvider',
-    function($routeProvider) {
+    function ($routeProvider) {
         $routeProvider.
             when('/', {
                 templateUrl: 'template/mainpage.html',
                 controller: 'mainPage'
             }).
-            when('/room', {
-                templateUrl: 'template/room.html',
-                css: ['css/lib/fotorama.css', 'css/room.css'],
-                controller: 'room'
+            when('/page/:pageId', {
+                templateUrl: 'template/page.html',
+                css: ['css/lib/fotorama.css', 'css/page.css'],
+                controller: 'page'
 
             }).
-            when('/rocking-chair', {
-                templateUrl: 'template/rocking_chair.html'
+            when('/about_me', {
+                templateUrl: 'template/about_me.html',
+                css: 'css/page.css'
             }).
-            when('/garden-furniture', {
-                templateUrl: 'template/garden_furniture.html'
-            }).
-            when('/kitchen', {
-                templateUrl: 'template/kitchen.html'
-            }).
-            when('/about-me', {
-                templateUrl: 'template/about-me.html',
-                css: 'css/about-me.css'
+            when('/contact', {
+                templateUrl: 'template/contact.html',
+                controller: 'contact',
+                css: 'css/contact.css'
             }).
             otherwise({
                 redirectTo: '/'

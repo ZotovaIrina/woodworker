@@ -90,7 +90,7 @@
     }
 
     .content-p {
-        background: rgba(75, 58, 51, 0.5);
+        background: rgba(75, 58, 51, 1);
         margin: 0;
         padding: 20px 0 20px 0;
         text-indent: 10px; /* Отступ первой строки в пикселах */
@@ -100,7 +100,7 @@
     }
 
     #footer {
-        margin-top: -86px; /* отрицательное значение высоты футера */
-        height: 86px;
+        margin-top: -88px; /* отрицательное значение высоты футера */
+        height: 105px;
     }
 }
