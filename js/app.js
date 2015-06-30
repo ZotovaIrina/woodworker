@@ -1,4 +1,4 @@
-var app = angular.module('woodworks', ['ngRoute']);
+var app = angular.module('woodworks', ['ngRoute', 'ngResource']);
 
 
 app.controller('mainPage', function ($scope) {
@@ -130,27 +130,18 @@ app.controller('page', function ($scope, $timeout, $routeParams) {
 })
 ;
 
-app.controller('contact', function ($scope) {
-    $scope.items = [
-        {
-            name: 'phone',
-            link: 'tel:+79123117862',
-            img: 'image/telephone.png',
-            span: 'Тел.: 8-912-311-78-62'
+app.controller('contact', function ($scope, $resource) {
+    var contactRequest = $resource('json/contacts.json').get().$promise;
+    contactRequest.then(
+        function onSuccess(resource) {
+            if (resource.success) {
+                $scope.items = resource.data.contacts;
+            }
         },
-        {
-            name: 'e-male',
-            link: 'mailto:zlobin1961@yandex.ru',
-            img: 'image/e-mail.png',
-            span: 'zlobin1961@yandex.ru'
-        },
-        {
-            name: 'vkontakte',
-            link: 'https://vk.com/valerizlobin',
-            img: 'image/vk.png',
-            span: 'Мебель ручной работы на заказ'
+        function onError() {
+            console.error(arguments);
         }
-    ]
+    )
 });
 
 

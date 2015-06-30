@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "contacts":[
+      {
+        "name": "phone",
+        "link": "tel:+79123117862",
+        "img": "image/telephone.png",
+        "span": "Тел.: 8-912-311-78-62"
+      },
+      {
+        "name": "e-male",
+        "link": "mailto:zlobin1961@yandex.ru",
+        "img": "image/e-mail.png",
+        "span": "zlobin1961@yandex.ru"
+      },
+      {
+        "name": "vkontakte",
+        "link": "https://vk.com/valerizlobin",
+        "img": "image/vk.png",
+        "span": "Мебель ручной работы на заказ"
+      }
+    ]
+  }
+}
