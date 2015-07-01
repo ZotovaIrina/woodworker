@@ -43,103 +43,36 @@ app.controller('mainPage', function ($scope) {
 
 });
 
-app.controller('page', function ($scope, $timeout, $routeParams) {
-    $timeout(function () {                            // Добавляем функцию timeoutБ которая откладывает выполнение фоторамы на 1 мс. Начинает выполняться функция scope и создает массив изображений
-        $('.fotorama').fotorama({});            // Фоторама же добавляется в очередь и дожидается завершения заполнения массива
-    }, 1);
-    var id = $routeParams.pageId; // присваиваем переменной id значение параметра URL pageId. PageId задано в ссылках на главной странице
-    var cont = {    // Объект содержащий данные для страниц. Список номеров картинок и адрес файла с текстом
-        room: {
-            images: [
-                '6383',
-                '6384',
-                '6385',
-                '6386',
-                '6387',
-                '6388',
-                '6389',
-                '6390',
-                '6391'
-            ],
-            description: 'template/room.html'
-        },
-        rocking_chair: {
-            images: [
-                '6383',
-                '6384',
-                '6385',
-                '6386',
-                '6387',
-                '6388',
-                '6389',
-                '6390',
-                '6391'
-            ],
-            description: 'template/rocking_chair.html'
-        },
-        garden_furniture: {
-            images: [
-                '9490',
-                '9491',
-                '9493',
-                '9494',
-                '9496',
-                '9497',
-                '9499'
-            ],
-            description: 'template/garden_furniture.html'
-        },
-        kitchen: {
-            images: [
-                '9490',
-                '9491',
-                '9493',
-                '9494',
-                '9496',
-                '9497',
-                '9499'
-            ],
-            description: 'template/kitchen.html'
-        },
-        other: {
-            images: [
-                '9490',
-                '9491',
-                '9493',
-                '9494',
-                '9496',
-                '9497',
-                '9499'
-            ],
-            description: 'template/other.html'
-        },
-        baby: {
-            images: [
-                '9490',
-                '9491',
-                '9493',
-                '9494',
-                '9496',
-                '9497',
-                '9499'
-            ],
-            description: 'template/baby.html'
-        }
-    };
-    $scope.contents = cont[id];     // contents принимает значение массива с картинками и текстом с нужным id
-})
-;
+app.controller('page', function ($scope, $timeout, $routeParams, $resource) {
 
-app.controller('contact', function ($scope, $resource) {
-    var contactRequest = $resource('json/contacts.json').get().$promise;
-    contactRequest.then(
+    var id = $routeParams.pageId; // присваиваем переменной id значение параметра URL pageId. PageId задано в ссылках на главной странице
+    var contentRequest = $resource("json/content.json").get().$promise;
+    contentRequest.then(
         function onSuccess(resource) {
             if (resource.success) {
-                $scope.items = resource.data.contacts;
+                $scope.contents = resource.data.content[id];     // contents принимает значение массива с картинками и текстом с нужным id
+                $timeout(function () {                            // Добавляем функцию timeoutБ которая откладывает выполнение фоторамы на 1 мс. Начинает выполняться функция scope и создает массив изображений
+                    $('.fotorama').fotorama({});            // Фоторама же добавляется в очередь и дожидается завершения заполнения массива
+                }, 1);
             }
         },
         function onError() {
             console.error(arguments);
+        }
+    );
+})
+;
+
+app.controller('contact', function ($scope, $resource) {
+    var contactRequest = $resource('json/contacts.json').get().$promise; // объект resource считывает данные из файла по адресу. В этом объекте есть метод get, который содержит промис с данными.
+    contactRequest.then(    // После того, как ответ получен возможно 2 варианта развития событий: 1. данные считаны успешно. 2. Произошла ошибка
+        function onSuccess(resource) {
+            if (resource.success) {
+                $scope.items = resource.data.contacts;  //Если данные успешно получены, то для отображение берутся данные из объекта
+            }
+        },
+        function onError() {
+            console.error(arguments);   // Если произошла ошибка чтения данных, то в консоль будет выведено сообщение об ошибке с перечнем всех аргументов
         }
     )
 });

@@ -1,0 +1,79 @@
+{
+  "success": true,
+  "data": {
+    "content": {
+      "room": {
+        "images": [
+          "9490",
+          "9491",
+          "9493",
+          "9494",
+          "9496",
+          "9497",
+          "9499"
+        ],
+        "description": "template/room.html"
+      },
+      "rocking_chair": {
+        "images": [
+          "9490",
+          "9491",
+          "9493",
+          "9494",
+          "9496",
+          "9497",
+          "9499"
+        ],
+        "description": "template/rocking_chair.html"
+      },
+      "garden_furniture": {
+        "images": [
+          "9490",
+          "9491",
+          "9493",
+          "9494",
+          "9496",
+          "9497",
+          "9499"
+        ],
+        "description": "template/garden_furniture.html"
+      },
+      "kitchen": {
+        "images": [
+          "9490",
+          "9491",
+          "9493",
+          "9494",
+          "9496",
+          "9497",
+          "9499"
+        ],
+        "description": "template/kitchen.html"
+      },
+      "other": {
+        "images": [
+          "9490",
+          "9491",
+          "9493",
+          "9494",
+          "9496",
+          "9497",
+          "9499"
+        ],
+        "description": "template/other.html"
+      },
+      "baby": {
+        "images": [
+          "9490",
+          "9491",
+          "9493",
+          "9494",
+          "9496",
+          "9497",
+          "9499"
+        ],
+        "description": "template/baby.html"
+      }
+    }
+  }
+}
