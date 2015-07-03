@@ -4,73 +4,105 @@
     "content": {
       "room": {
         "images": [
-          "9490",
-          "9491",
-          "9493",
-          "9494",
-          "9496",
-          "9497",
-          "9499"
+          "DSC_8339.jpg",
+          "DSC_8340.jpg",
+          "DSC_8342.jpg",
+          "DSC_8343.jpg",
+          "DSC_8345.jpg",
+          "DSC_8350.jpg",
+          "DSC_8351.jpg",
+          "DSC_8352.jpg",
+          "DSC_8353.jpg",
+          "DSC_8354.jpg",
+          "DSC_8355.jpg",
+          "DSC_8356.jpg",
+          "DSC_8357.jpg",
+          "DSC_8359.jpg",
+          "DSC_8361.jpg",
+          "DSC_8364.jpg",
+          "DSC_8396.jpg",
+          "DSC_8397.jpg",
+          "DSC_8399.jpg"
         ],
         "description": "template/room.html"
       },
       "rocking_chair": {
         "images": [
-          "9490",
-          "9491",
-          "9493",
-          "9494",
-          "9496",
-          "9497",
-          "9499"
+          "DSC_6383.jpg",
+          "DSC_6384.jpg",
+          "DSC_6385.jpg",
+          "DSC_6386.jpg",
+          "DSC_6387.jpg",
+          "DSC_6388.jpg",
+          "DSC_6389.jpg",
+          "DSC_6390.jpg",
+          "DSC_6391.jpg",
+          "DSC_6392.jpg",
+          "DSC_6393.jpg",
+          "DSC_6394.jpg",
+          "DSC_6395.jpg",
+          "DSC_6396.jpg",
+          "DSC_9464.jpg",
+          "DSC_9468.jpg",
+          "DSC_9469.jpg",
+          "DSC_9470.jpg",
+          "DSC_9472.jpg",
+          "DSC_9473.jpg",
+          "DSC_9474.jpg"
         ],
         "description": "template/rocking_chair.html"
       },
       "garden_furniture": {
         "images": [
-          "9490",
-          "9491",
-          "9493",
-          "9494",
-          "9496",
-          "9497",
-          "9499"
+          "DSC_9443.jpg",
+          "DSC_9448.jpg",
+          "DSC_9449.jpg",
+          "DSC_9450.jpg",
+          "DSC_9452.jpg",
+          "DSC_9453.jpg",
+          "DSC_9454.jpg",
+          "DSC_9459.jpg",
+          "DSC_9461.jpg",
+          "DSC_9490.jpg",
+          "DSC_9491.jpg",
+          "DSC_9493.jpg",
+          "DSC_9494.jpg",
+          "DSC_9496.jpg",
+          "DSC_9497.jpg",
+          "DSC_9499.jpg",
+          "DSC_9553.jpg",
+          "DSC_9554.jpg",
+          "DSC_9555.jpg",
+          "DSC_9556_1.jpg"
         ],
         "description": "template/garden_furniture.html"
       },
       "kitchen": {
         "images": [
-          "9490",
-          "9491",
-          "9493",
-          "9494",
-          "9496",
-          "9497",
-          "9499"
+          "DSC_9482.jpg",
+          "DSC_9484.jpg",
+          "DSC_9485.jpg",
+          "DSC_9486.jpg",
+          "DSC_9487.jpg",
+          "IMG_20141207_113753.jpg",
+          "IMG_20141207_113826.jpg",
+          "IMG_20141207_113838.jpg",
+          "IMG_20141207_113851.jpg",
+          "IMG_20141207_113326.jpg"
         ],
         "description": "template/kitchen.html"
       },
       "other": {
         "images": [
-          "9490",
-          "9491",
-          "9493",
-          "9494",
-          "9496",
-          "9497",
-          "9499"
+          "DSC_9477.jpg",
+          "DSC_9479.jpg",
+          "DSC_9480.jpg"
         ],
         "description": "template/other.html"
       },
       "baby": {
         "images": [
-          "9490",
-          "9491",
-          "9493",
-          "9494",
-          "9496",
-          "9497",
-          "9499"
+
         ],
         "description": "template/baby.html"
       }

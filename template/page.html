@@ -4,8 +4,8 @@
          data-nav="thumbs"
          data-allowfullscreen="true"
          data-keyboard="true">
-        <a ng-repeat="image in contents.images" href="image/page/DSC_{{image}}!.jpg"> <!-- создание списка изображений происходит контроллером -->
-            <img src="image/page/mini/DSC_{{image}}mini.jpg">   <!-- В переменную image передаются по одной картинки из переменной contents.images -->
+        <a ng-repeat="image in contents.images" ng-href="image/photo/big/{{pageId}}/{{image}}"> <!-- создание списка изображений происходит контроллером --> <!-- Большие фото -->
+            <img ng-src="image/photo/mini/{{pageId}}/{{image}}">   <!-- В переменную image передаются по одной картинки из переменной contents.images --> <!-- Маленькие фото -->
         </a>
 
     </div>

@@ -7,31 +7,31 @@ app.controller('mainPage', function ($scope) {
             name: 'Дом',
             description: 'Мебель для спальни, кухни, оффиса',
             link: '#/page/room',
-            imgLink: 'image/bed.jpg'
+            imgLink: 'image/photo/big/room/DSC_8339.jpg'
         },
         {
             name: 'Кресло-качалка',
             description: 'Описание кресел-качалок',
             link: '#/page/rocking_chair',
-            imgLink: 'https://pp.vk.me/c627530/v627530274/6d23/TqCltgHOjus.jpg'
+            imgLink: 'image/photo/big/rocking_chair/DSC_9464.jpg'
         },
         {
             name: 'Садовая мебель',
             description: 'Мебель для сада, бани, беседки',
             link: '#/page/garden_furniture',
-            imgLink: 'https://pp.vk.me/c623629/v623629274/3f31c/SVgg4HgOmjY.jpg'
+            imgLink: 'image/photo/big/garden_furniture/DSC_9448.jpg'
         },
         {
             name: 'Кухонная мебель',
             description: 'Мебель для кухни',
             link: '#/page/kitchen',
-            imgLink: 'image/table.jpg'
+            imgLink: 'image/photo/big/kitchen/DSC_9486.jpg'
         },
         {
             name: 'Прочее',
             description: 'Прочие мелочи',
             link: '#/page/other',
-            imgLink: 'https://pp.vk.me/c623629/v623629274/3ff08/QyFF_YKO88o.jpg'
+            imgLink: 'image/photo/big/other/DSC_9477.jpg'
         },
         {
             name: 'Детская мебель',
@@ -44,24 +44,23 @@ app.controller('mainPage', function ($scope) {
 });
 
 app.controller('page', function ($scope, $timeout, $routeParams, $resource) {
-
     var id = $routeParams.pageId; // присваиваем переменной id значение параметра URL pageId. PageId задано в ссылках на главной странице
     var contentRequest = $resource("json/content.json").get().$promise;
     contentRequest.then(
         function onSuccess(resource) {
             if (resource.success) {
                 $scope.contents = resource.data.content[id];     // contents принимает значение массива с картинками и текстом с нужным id
+                $scope.pageId = id;
                 $timeout(function () {                            // Добавляем функцию timeoutБ которая откладывает выполнение фоторамы на 1 мс. Начинает выполняться функция scope и создает массив изображений
                     $('.fotorama').fotorama({});            // Фоторама же добавляется в очередь и дожидается завершения заполнения массива
                 }, 1);
-            }
+           }
         },
         function onError() {
             console.error(arguments);
         }
     );
-})
-;
+});
 
 app.controller('contact', function ($scope, $resource) {
     var contactRequest = $resource('json/contacts.json').get().$promise; // объект resource считывает данные из файла по адресу. В этом объекте есть метод get, который содержит промис с данными.
@@ -74,7 +73,7 @@ app.controller('contact', function ($scope, $resource) {
         function onError() {
             console.error(arguments);   // Если произошла ошибка чтения данных, то в консоль будет выведено сообщение об ошибке с перечнем всех аргументов
         }
-    )
+    );
 });
 
 
