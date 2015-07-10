@@ -4,7 +4,6 @@ var originalPhoto = 'image/photo/src/**/*.jpg',
     miniImagesFolder = 'image/photo/mini/';
 
     grunt.initConfig({
-
         jshint: {
             files: [
                 'Gruntfile.js',
