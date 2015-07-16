@@ -5,7 +5,7 @@ app.controller('mainPage', function ($scope) {
     $scope.items = [            // $scope – специальный объект, который задает параметры отображения переменной.
         {
             name: 'Дом',
-            description: 'Мебель для спальни, кухни, оффиса',
+            description: 'Мебель для спальни, кухни, офиса',
             link: '#/page/room',
             imgLink: 'image/photo/big/room/DSC_8339.jpg'
         },

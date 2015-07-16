@@ -7,17 +7,22 @@
     color: #241b18;
     padding: 0.3em 0 0.3em 0.5em;
     border-left: 5px solid #FFD119;
+    margin: 1em 0 0.5em;
 }
 
 .page-about-me {
     padding: 4em;
 }
-
+.page-content-foto {
+    width: 200px;
+    float: left;
+    margin: 0 1em 0 1.3em;
+}
 .page-about-me-photo {
     display: inline-block;
     position: absolute;
     width: 100px;
-    border: 1px solid ;
+    border: 1px solid transparent;
     border-radius: 50%;
 }
 
@@ -34,6 +39,6 @@
 .page-content-p {
     color: #4b3a33;
     font-size: 1em;
-    text-indent: 1.2em;
+    padding: 0 1.3em 0.5em;
     line-height: 1.5em;
 }
