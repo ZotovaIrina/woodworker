@@ -7,6 +7,7 @@
     "grunt-contrib-htmlmin": "^0.4.0",
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-image": "^1.0.5",
     "grunt-image-resize": "^1.0.0"
   }
 }
