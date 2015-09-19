@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         miniImagesFolderBuild = 'build/image/photo/mini/';
 
     grunt.initConfig({
-            jshint: {                   // Проверка ошибок
+            jshint: {                   // РџСЂРѕРІРµСЂРєР° РѕС€РёР±РѕРє
                 files: [
                     'Gruntfile.js',
                     'js/**/*.js',
@@ -22,7 +22,7 @@ module.exports = function (grunt) {
                 files: ['<%= jshint.files %>'],
                 tasks: ['jshint']
             },
-            image_resize: {             // Изменение размера фото
+            image_resize: {             // РР·РјРµРЅРµРЅРёРµ СЂР°Р·РјРµСЂР° С„РѕС‚Рѕ
                 resizeTo64: {
                     options: {
                         width: 64,
@@ -46,7 +46,7 @@ module.exports = function (grunt) {
                     dest: bigImagesFolder
                 }
             },
-            copy: {             // Копирование файлов
+            copy: {             // РљРѕРїРёСЂРѕРІР°РЅРёРµ С„Р°Р№Р»РѕРІ
                 all: {
                     files: [
                         // includes files within path
@@ -61,7 +61,7 @@ module.exports = function (grunt) {
                     ]
                 }
             },
-            image: {            //сохранение фото в динамическом формате
+            image: {            //СЃРѕС…СЂР°РЅРµРЅРёРµ С„РѕС‚Рѕ РІ РґРёРЅР°РјРёС‡РµСЃРєРѕРј С„РѕСЂРјР°С‚Рµ
                 dynamic: {
                     files: [{
                         expand: true,
