@@ -33,4 +33,13 @@ app.config(['$routeProvider',
             });
     }]);
 
+app.run(function(){
+    $("#site-logo")
+        .mouseover(function () {
+            $(".popup").show();
+        })
+        .mouseout(function(){
+            $(".popup").hide();
+        });
+});
 module.exports = app;

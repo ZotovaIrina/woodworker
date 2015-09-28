@@ -68,6 +68,23 @@ body {
 
 }
 
+.popup {
+    display: none;
+    position: absolute;
+    width:auto;
+    height: 18px;
+    background-color: #fff;
+    margin-top: 44px;
+    margin-left: 360px;
+    padding-right: 15px;
+}
+
+.popup-p {
+    font-size: 1em;
+    vertical-align:middle;
+    color: #241b18;
+}
+
 .main-link {
     position: absolute;
     display: block;

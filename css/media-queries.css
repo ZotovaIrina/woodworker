@@ -21,6 +21,12 @@
         position: static;
     }
 
+    .popup {
+        height: 15px;
+        margin-top: 44px;
+        margin-left: 295px;
+    }
+
     #main-nav a {
         font-size: 1.22em;
 
