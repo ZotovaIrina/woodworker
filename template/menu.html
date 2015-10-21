@@ -1,0 +1,16 @@
+<ul>
+    <li class="menu-item">
+        <a href="#/" class="menu-item-link">
+            <div class="menu-item-name">
+                <p>Главная</p>
+            </div>
+        </a>
+    </li>
+    <li class="menu-item" ng-repeat="item in items">
+        <a href="{{item.link}}" class="menu-item-link">
+            <div class="menu-item-name" ng-repeat="item in items">
+                <p>{{item.name}}</p>
+            </div>
+        </a>
+    </li>
+</ul>

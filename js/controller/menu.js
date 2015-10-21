@@ -1,8 +1,8 @@
 var app = require("../app");
 
-app.controller('mainPage', function ($scope, $resource) {
-    var mainpageRequest = $resource('json/mainpage.json').get().$promise;
-    mainpageRequest.then(
+app.controller('menu', function ($scope, $resource) {
+    var menuRequest = $resourse('json/mainpage.json').get().$promise;
+    menuRequest.then(
         function onSuccess(resource) {
             if (resource.success) {
                 $scope.items = resource.data.mainpage;
