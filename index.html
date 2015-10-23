@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/page.css">
     <link rel="stylesheet" type="text/css" href="css/contact.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
     <link rel="stylesheet" type="text/css" href="css/media-queries.css">
 
     <link rel="shortcut icon" href="/image/favicon.ico" type="image/x-icon">
@@ -72,18 +73,30 @@
             </div>
         </div>
 
-        <nav id="main-nav">
+        <nav class="main-nav" ng-controller="MenuController">
             <ul>
-                <li><a href="#/" class="main-nav-link" id="menu">Меню</a></li>
-                <li><a href="#/about_me" class="main-nav-link">О себе</a></li>
+                <li class="main-nav-li">
+                    <a href="#/" class="main-nav-link" id="menu" ng-click="menuShow()">Меню
+                    </a>
+                </li>
+                <li class="main-nav-li">
+                    <a href="#/about_me" class="main-nav-link">О себе
+                    </a>
+                </li>
                 <!-- после #/ обрабатывается маршрутизатором ангуляра about-me является меткой и будет отображаться в адрессной строке -->
-                <li><a href="#/contact" class="main-nav-link">Контакты</a></li>
+                <li class="main-nav-li">
+                    <a href="#/contact" class="main-nav-link">Контакты
+                    </a>
+                </li>
             </ul>
+            <div menu-Derective class="menu-div"></div>
         </nav>
+
     </header>
 
     <div class="content" ng-view> <!-- атрибут ng задается для той части, которая будет определяться ангуляром -->
     </div>
+
 </div>
 
 <footer id="footer">

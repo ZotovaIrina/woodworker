@@ -6,6 +6,7 @@ require('angular-resource');
 
 var app = angular.module('woodworks', ['ngRoute', 'ngResource']);
 
+
 app.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
@@ -33,13 +34,27 @@ app.config(['$routeProvider',
             });
     }]);
 
-app.run(function(){
+app.run(function () {
     $("#site-logo")
         .mouseover(function () {
             $(".popup").show();
         })
-        .mouseout(function(){
+        .mouseout(function () {
             $(".popup").hide();
         });
+});
+
+app.controller('MenuController', ['$scope', function ($scope) {
+    $scope.menuToggle = function () {
+        console.log("Menu Show");
+
+          };
+}]);
+app.directive('menuDerective', function() {
+    return {
+        templateUrl: 'template/menu.html',
+        controller: 'menu',
+        css: 'menu.css'
+    };
 });
 module.exports = app;

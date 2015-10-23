@@ -51,6 +51,10 @@ body {
     float: left;
 }
 
+.main-link {
+    text-decoration: none;
+}
+
 #site-logo h1 {
 
     color: #FFD119;
@@ -65,7 +69,6 @@ body {
     margin: 0;
     font-size: 1em;
     letter-spacing: 2px; /* Расстояние между буквами*/
-
 }
 
 .popup {
@@ -85,20 +88,7 @@ body {
     color: #241b18;
 }
 
-.main-link {
-    position: absolute;
-    display: block;
-    text-decoration: none;
-}
-
-#main-nav li {
-    margin: 0;
-    padding: 0;
-    list-style: none; /* Убирает точки пунктов*/
-    float: left; /* Пункты следуют один за другим в строчку*/
-}
-
-#main-nav a {
+.main-nav-link {
     line-height: 100%;
     font-size: 1.33em;
     font-weight: bold;
@@ -109,13 +99,26 @@ body {
     text-transform: uppercase;
 }
 
-#main-nav li:hover .main-nav-link {
-    /*При наведении курсора на картинку*/
-    color: #FFD119; /*Уровень прозрачности элемента*/
+.main-nav-li {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Убирает точки пунктов*/
+    float: left; /* Пункты следуют один за другим в строчку*/
 }
 
-#main-nav {
+.main-nav-li:hover .main-nav-link {
+    /*При наведении курсора на пунк*/
+    color: #FFD119;
+}
+
+.main-nav {
     float: right;
+}
+.menu-div {
+    display: block;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 35px;
 }
 
 .content {

@@ -12,4 +12,5 @@ app.controller('mainPage', function ($scope, $resource) {
             console.error(arguments);
         }
     );
+
 });
