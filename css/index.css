@@ -114,12 +114,6 @@ body {
 .main-nav {
     float: right;
 }
-.menu-div {
-    display: block;
-    position: absolute;
-    margin-top: 60px;
-    margin-left: 35px;
-}
 
 .content {
     width: 940px;

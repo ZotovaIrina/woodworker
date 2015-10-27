@@ -44,17 +44,4 @@ app.run(function () {
         });
 });
 
-app.controller('MenuController', ['$scope', function ($scope) {
-    $scope.menuToggle = function () {
-        console.log("Menu Show");
-
-          };
-}]);
-app.directive('menuDerective', function() {
-    return {
-        templateUrl: 'template/menu.html',
-        controller: 'menu',
-        css: 'menu.css'
-    };
-});
 module.exports = app;
