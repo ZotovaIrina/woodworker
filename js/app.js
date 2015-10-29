@@ -34,7 +34,7 @@ app.config(['$routeProvider',
             });
     }]);
 
-app.run(function () {
+app.run(function ($rootScope) {
     $("#site-logo")
         .mouseover(function () {
             $(".popup").show();
@@ -42,6 +42,9 @@ app.run(function () {
         .mouseout(function () {
             $(".popup").hide();
         });
+    angular.element(document).on("click", function (e) {
+        $rootScope.$broadcast("documentClicked", angular.element(e.target));
+    });
 });
 
 module.exports = app;
