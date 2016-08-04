@@ -18,7 +18,7 @@
     "jquery": "^2.1.4"
   },
   "browser": {
-    "jquery.fotorama": "./js/lib/fotorama.js"
+    "jquery.fotorama": "./public/js/lib/fotorama.js"
   },
   "browserify-shim": {
     "jquery.fotorama": {
@@ -26,5 +26,10 @@
         "jquery"
       ]
     }
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "uglify": "^0.1.5"
   }
 }

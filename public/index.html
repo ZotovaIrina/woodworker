@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html ng-app="woodworks"> <!-- Добавляем атрибут ng-app, который инициализирует запуск AngularJS -->
+<head>
+    <title> Woodworks </title>
+    <base href="/">
+
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+    <meta property="og:image" content="http://i.gyazo.com/b9b56053f465ee5fa918a8468adb937a.jpg"/>
+    <meta property="og:title" content="Валерий Злобин"/>
+    <meta property="og:description" content="Изготавливаю деревянную мебель ручной работы высокого качества на заказ."/>
+    <meta name="twitter:image:src:" content="http://i.gyazo.com/b9b56053f465ee5fa918a8468adb937a.jpg"/>
+    <meta name="twitter:title" content="Валерий Злобин"/>
+    <meta name="twitter:description"
+          content="Изготавливаю деревянную мебель ручной работы высокого качества на заказ."/>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/fotorama.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+    <link rel="stylesheet" type="text/css" href="css/contact.css"/>
+    <link rel="stylesheet" type="text/css" href="css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="css/media-queries.css">
+
+    <link rel="shortcut icon" href="/public/image/favicon.ico" type="image/x-icon">
+    <meta property="og:image" content="/image/favicon.ico" type="image/x-icon"/>
+    <link rel="image_src" href="/public/image/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/public/image/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/public/image/favicon.ico" type="image/x-icon"/>
+
+
+    <script src="js/bundle.js"></script>
+
+
+    <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-65150591-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" src="http://vk.com/js/api/share.js?91" charset="windows-1251"></script>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+    <header id="header">
+        <div id="site-logo">
+            <a href="/" class="main-link">
+
+                <h1>Валерий Злобин</h1>
+
+                <h2>Мебель из массива</h2>
+            </a>
+
+            <div class="popup">
+                <p class="popup-p">Главная страница</p>
+            </div>
+        </div>
+
+        <nav class="main-nav" ng-controller="MenuController">
+            <ul>
+                <li class="main-nav-li">
+                    <a href="/" class="main-nav-link" id="menu">Главная
+                    </a>
+                </li>
+                <li class="main-nav-li">
+                    <a href="/about_me" class="main-nav-link">О себе
+                    </a>
+                </li>
+                <!-- после #/ обрабатывается маршрутизатором ангуляра about-me является меткой и будет отображаться в адрессной строке -->
+                <li class="main-nav-li">
+                    <a href="/contact" class="main-nav-link">Контакты
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="content" ng-view> <!-- атрибут ng задается для той части, которая будет определяться ангуляром -->
+    </div>
+
+</div>
+
+<footer id="footer">
+    <div class="footer-contact">
+        <a href="contact" class="footer-contact-link">Мои контакты:</a> <br>
+        <a href="tel:+79123117862"> Тел.: 8-912-311-78-62 </a> <br>
+        <a href="mailto:zlobin1961@yandex.ru"> zlobin1961@yandex.ru </a> <br>
+        <a href="https://vk.com/valerizlobin" target="_blank"><img src="image/vk.png"
+                                                                   class="footer-contact-picture"/></a>
+        <a href="http://www.livemaster.ru/item/11020675-dlya-doma-interera-sadovaya-mebel" target="_blank"><img
+                src="image/livemaster.png"
+                class="footer-contact-picture"/></a>
+    </div>
+    <div class="footer-network">
+
+        <div class="yashare-auto-init"
+             data-yashareL10n="ru"
+             data-yashareType="none"
+             data-yashareQuickServices="vkontakte,facebook,twitter,odnoklassniki,moimir,gplus"
+             data-yashareLink="vzlobin.ru"
+             data-yashareImage="http://i.gyazo.com/b9b56053f465ee5fa918a8468adb937a.jpg"
+             data-yashareTitle="Валерий Злобин"
+             data-yashareDescription="Деревянная мебель ручной работы на заказ">
+        </div>
+
+    </div>
+
+    <span class="footer-autor">Сделала Ирина Зотова</span>
+</footer>
+
+</body>
+</html>

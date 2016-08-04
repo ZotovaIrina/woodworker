@@ -9,9 +9,9 @@ module.exports = function (grunt) {
             jshint: {                   // Проверка ошибок
                 files: [
                     'Gruntfile.js',
-                    'js/**/*.js',
-                    '!js/lib/**/*.js',
-                    '!js/bundle.js'
+                    'public/js/**/*.js',
+                    '!public/js/lib/**/*.js',
+                    '!public/js/bundle.js'
                 ],
                 options: {
                     globals: {
@@ -47,14 +47,14 @@ module.exports = function (grunt) {
                 all: {
                     files: [
                         // includes files within path
-                        {expand: true, src: ['js/bundle.js'], dest: 'build/', filter: 'isFile'},
-                        {expand: true, src: ['json/**/*.json'], dest: 'build/', filter: 'isFile'},
-                        {expand: true, src: ['css/**/*.css'], dest: 'build/', filter: 'isFile'},
-                        {expand: true, src: ['image/photo/mini/**/*.jpg'], dest: 'build/', filter: 'isFile'},
-                        {expand: true, src: ['image/photo/big/**/*.jpg'], dest: 'build/', filter: 'isFile'},
-                        {expand: true, src: ['image/*'], dest: 'build/', filter: 'isFile'},
-                        {expand: true, src: ['template/**/*.html'], dest: 'build/', filter: 'isFile'},
-                        {expand: true, src: ['index.html'], dest: 'build/', filter: 'isFile'}
+                        {expand: true, src: ['public/js/bundle.js'], dest: 'build/', filter: 'isFile'},
+                        {expand: true, src: ['public/json/**/*.json'], dest: 'build/', filter: 'isFile'},
+                        {expand: true, src: ['public/css/**/*.css'], dest: 'build/', filter: 'isFile'},
+                        {expand: true, src: ['public/image/photo/mini/**/*.jpg'], dest: 'build/', filter: 'isFile'},
+                        {expand: true, src: ['public/image/photo/big/**/*.jpg'], dest: 'build/', filter: 'isFile'},
+                        {expand: true, src: ['public/image/*'], dest: 'build/', filter: 'isFile'},
+                        {expand: true, src: ['public/template/**/*.html'], dest: 'build/', filter: 'isFile'},
+                        {expand: true, src: ['public/index.html'], dest: 'build/', filter: 'isFile'}
                     ]
                 }
             },
@@ -62,16 +62,16 @@ module.exports = function (grunt) {
                 dynamic: {
                     files: [{
                         expand: true,
-                        cwd: 'image/photo/',
-                        src: '**/*.jpg',
-                        dest: 'src!'
+                        cwd: 'public/image/photo/',
+                        src: 'public/**/*.jpg',
+                        dest: 'public/src!'
                     }]
                 }
             },
             browserify: {           //Из отдельных js файлов делает один и отслеживает порядок функций
                 dist: {
                     files: {
-                        'js/bundle.js': ['js/**/*.js', '!js/bundle.js']
+                        'public/js/bundle.js': ['public/js/**/*.js', '!public/js/bundle.js']
                     },
                     transform: ["browserify-shim"],
                     options: {
@@ -83,11 +83,17 @@ module.exports = function (grunt) {
             },
             watch: {                //Сканирует изменения в файлах, если изменение есть, то автоматически запускает browserify
                 scripts: {
-                    files: ['js/**/*.js', '!js/lib/**/*.js', '!js/bundle.js'],
+                    files: ['public/js/**/*.js', '!public/js/lib/**/*.js', '!public/js/bundle.js'],
                     tasks: ['jshint', 'browserify'],
                     options: {
 
                     }
+                }
+            },
+            uglify: {
+                js: {
+                    src: ['public/js/bundle.js'],
+                    dest: 'public/js/bundle.min.js'
                 }
             }
         }
@@ -100,6 +106,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-image');
     grunt.loadNpmTasks('grunt-browserify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['jshint']);
     grunt.registerTask('build', [
@@ -111,9 +118,12 @@ module.exports = function (grunt) {
 
     grunt.registerTask('dev', [
         'jshint',
-        'copy:all',
         'browserify',
         'watch'
+    ]);
+
+    grunt.registerTask('min', [
+        'uglify'
     ]);
 
 };
