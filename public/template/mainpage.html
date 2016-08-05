@@ -1,15 +1,24 @@
 <ul>
-    <li class="section-item" ng-repeat="item in items">
-        <a ng-href="{{item.link}}" class="section-item-link">
+    <li class="section-item"
+        ng-repeat="item in items"
+        itemscope
+        itemtype="http://schema.org/Product">
+        <a ng-href="{{item.link}}"
+           class="section-item-link"
+                itemprop="url">
             <img ng-src="{{item.imgLink}}"
                  alt="{{item.name}}"
-                 class="section-item-image"/>
+                 class="section-item-image"
+                    itemprop="image"/>
 
             <div class="section-item-details">
-                <div class="section-item-title">{{item.name}}</div>
-                <p>{{item.description}}</p>
+                <div class="section-item-title"
+                        itemprop="offers">{{item.name}}</div>
+                <p itemprop="description">{{item.description}}</p>
             </div>
         </a>
     </li>
 </ul>
-<span class="content-p">Вся мебель делается на заказ по вашим размерам, из материала по вашему выбору и с покрытием, которое вы предпочитаете.</span>
+<span class="content-p"
+      itemscope
+      itemprop="description">Вся мебель делается на заказ по вашим размерам, из материала по вашему выбору и с покрытием, которое вы предпочитаете.</span>

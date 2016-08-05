@@ -14,6 +14,7 @@
     <meta name="twitter:title" content="Валерий Злобин"/>
     <meta name="twitter:description"
           content="Изготавливаю деревянную мебель ручной работы высокого качества на заказ."/>
+    <meta name="yandex-verification" content="9b01c42dcf672f99" />
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/lib/fotorama.css">
@@ -63,11 +64,14 @@
 <div class="wrapper">
     <header id="header">
         <div id="site-logo">
-            <a href="/" class="main-link">
+            <a href="/"
+               class="main-link"
+               itemscope
+               itemtype="http://schema.org/Person">
 
-                <h1>Валерий Злобин</h1>
+                <h1 itemprop="name">Валерий Злобин</h1>
 
-                <h2>Мебель из массива</h2>
+                <h2 itemprop="provider">Мебель из массива</h2>
             </a>
 
             <div class="popup">
@@ -101,13 +105,23 @@
 </div>
 
 <footer id="footer">
-    <div class="footer-contact">
-        <a href="contact" class="footer-contact-link">Мои контакты:</a> <br>
-        <a href="tel:+79123117862"> Тел.: 8-912-311-78-62 </a> <br>
-        <a href="mailto:zlobin1961@yandex.ru"> zlobin1961@yandex.ru </a> <br>
-        <a href="https://vk.com/valerizlobin" target="_blank"><img src="image/vk.png"
-                                                                   class="footer-contact-picture"/></a>
-        <a href="http://www.livemaster.ru/item/11020675-dlya-doma-interera-sadovaya-mebel" target="_blank"><img
+    <div class="footer-contact"
+         itemscope
+         itemtype="http://schema.org/Person">
+        <a href="/contact"
+           class="footer-contact-link">
+            Мои контакты:</a> <br>
+        <a href="tel:+79123117862"
+                itemprop="telephone"> Тел.: 8-912-311-78-62 </a> <br>
+        <a href="mailto:zlobin1961@yandex.ru"
+                itemprop="email"> zlobin1961@yandex.ru </a> <br>
+        <a href="https://vk.com/valerizlobin"
+           target="_blank"
+           itemprop="url"><img src="image/vk.png"
+                               class="footer-contact-picture"/></a>
+        <a href="http://www.livemaster.ru/item/11020675-dlya-doma-interera-sadovaya-mebel"
+           target="_blank"
+           itemprop="url"><img
                 src="image/livemaster.png"
                 class="footer-contact-picture"/></a>
     </div>
